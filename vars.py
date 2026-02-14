@@ -1,9 +1,9 @@
 import os
 from typing import List
 
-API_ID = int(os.getenv("API_ID", ""))
-API_HASH = os.getenv("API_HASH", "")
-BOT_TOKEN = os.getenv("BOT_TOKEN", "")
+API_ID = int(os.getenv("API_ID", "20990520"))
+API_HASH = os.getenv("API_HASH", "714a70d62fc73bf8ec1a5d38adf8f198")
+BOT_TOKEN = os.getenv("BOT_TOKEN", "8097946087:AAEfpDuN-N58XpSX-5diHKaqlnlfwM7zi_g")
 MONGO_URI = os.getenv("MONGO_URI", "")
 DATABASE_CHANNEL_ID = int(os.getenv("DATABASE_CHANNEL_ID", ""))
 ADMIN_ID = int(os.getenv("ADMIN_ID", ""))
