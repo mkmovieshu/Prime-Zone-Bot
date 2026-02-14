@@ -3,7 +3,7 @@ from typing import List
 
 API_ID = int(os.getenv("API_ID", "20990520"))
 API_HASH = os.getenv("API_HASH", "714a70d62fc73bf8ec1a5d38adf8f198")
-BOT_TOKEN = os.getenv("BOT_TOKEN", "8097946087:AAEfpDuN-N58XpSX-5diHKaqlnlfwM7zi_g")
+BOT_TOKEN = os.getenv("BOT_TOKEN", "")
 MONGO_URI = os.getenv("MONGO_URI", "mongodb+srv://kondapallishiva1431:3GNh3NTP3bhAOTsi@cluster0.kj2e8.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 DATABASE_CHANNEL_ID = int(os.getenv("DATABASE_CHANNEL_ID", ""))
 ADMIN_ID = int(os.getenv("ADMIN_ID", "8185007347"))
