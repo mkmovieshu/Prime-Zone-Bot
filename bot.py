@@ -4,18 +4,8 @@ from pytz import timezone
 from datetime import datetime
 import os
 from pyrogram import Client
-from aiohttp import web
 
-routes = web.RouteTableDef()
-
-@routes.get("/", allow_head=True)
-async def root_route(request):
-    return web.Response(text="<h3 align='center'><b>I am Alive</b></h3>", content_type='text/html')
-
-async def web_server():
-    app = web.Application(client_max_size=30_000_000)
-    app.add_routes(routes)
-    return app
+# వెబ్ సర్వర్ కోడ్ అవసరం లేదు, అందుకే తీసివేస్తున్నాం
 
 class Bot(Client):
     def __init__(self):
@@ -31,18 +21,13 @@ class Bot(Client):
         self.START_TIME = time.time()
 
     async def start(self):
-        app = web.AppRunner(await web_server())
-        await app.setup()
-        try:
-            await web.TCPSite(app, "0.0.0.0", int(os.getenv("PORT", 8080))).start()
-            print("Web server started.")
-        except Exception as e:
-            print(f"Web server error: {e}")
-
-
+        # ఇక్కడ ఉన్న web_server() మరియు TCPSite కోడ్ మొత్తాన్ని తీసివేస్తున్నాం
+        # ఇది పోర్ట్ ఎర్రర్‌ను నివారిస్తుంది.
+        
         await super().start()
         me = await self.get_me()
         print(f"Bot Started as {me.first_name}")
+        
         if isinstance(ADMIN_ID, int):
             try:
                 await self.send_message(ADMIN_ID, f"**{me.first_name} is started...**")
@@ -64,6 +49,6 @@ class Bot(Client):
 
     async def stop(self, *args):
         await super().stop()
-        print(f"{me.first_name} Bot stopped.")
+        print("Bot stopped.")
 
 bot = Bot()
